@@ -8,7 +8,7 @@ Connect Strava, Garmin and TrainingPeaks. EnduranceAI analyzes every heartbeat, 
 and night of sleep to predict race times, flag injury risk before it happens, and
 coach you in plain language — in English or Portuguese.
 
-[![CI](https://github.com/USERNAME/enduranceai/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/enduranceai/actions/workflows/ci.yml)
+[![CI](https://github.com/Lucca001/todos/actions/workflows/ci.yml/badge.svg)](https://github.com/Lucca001/todos/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-13c187.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=next.js)](https://nextjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -58,7 +58,7 @@ mobile to ultrawide, and a WebGL landing page with a custom fluid-noise shader.
 ## Quick start
 
 ```bash
-git clone https://github.com/USERNAME/enduranceai.git
+git clone https://github.com/Lucca001/todos.git
 cd enduranceai
 cp .env.example .env
 ```
