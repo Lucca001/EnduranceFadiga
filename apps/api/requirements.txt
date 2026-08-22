@@ -10,7 +10,7 @@ httpx==0.27.*
 pandas==2.*
 numpy==1.26.*
 scikit-learn==1.5.*
-xgboost==2.*
+xgboost==3.*
 lightgbm==4.*
 prophet==1.1.*
 joblib==1.*
