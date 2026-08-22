@@ -1,0 +1,232 @@
+{
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "how": "How it works",
+      "pricing": "Pricing",
+      "open": "Open dashboard"
+    },
+    "hero": {
+      "badge": "AI for endurance athletes",
+      "title": "Train smarter.",
+      "titleAccent": "Race faster.",
+      "subtitle": "Connect Strava, Garmin and TrainingPeaks. EnduranceAI analyzes every heartbeat, watt and night of sleep to predict your performance, flag injury risk and coach you in plain language.",
+      "cta": "Start free",
+      "ctaSecondary": "See how it works",
+      "stats": [
+        {
+          "value": "5k → Ironman",
+          "label": "race predictions"
+        },
+        {
+          "value": "±2.5%",
+          "label": "finish-time accuracy"
+        },
+        {
+          "value": "8",
+          "label": "platform integrations"
+        },
+        {
+          "value": "24/7",
+          "label": "AI coaching"
+        }
+      ]
+    },
+    "features": {
+      "title": "Everything your data has been trying to tell you",
+      "subtitle": "One platform. Every metric. Answers in plain language, not spreadsheets.",
+      "items": [
+        {
+          "name": "AI Coach",
+          "desc": "Ask anything about your own training. \"Can I go hard tomorrow?\" gets an answer that cites your actual load and HRV — not generic advice."
+        },
+        {
+          "name": "Race Predictions",
+          "desc": "Finish times with confidence intervals for 5k through Ironman, driven by a physiological model corrected by your current form."
+        },
+        {
+          "name": "Injury Risk",
+          "desc": "See your risk percentage and exactly which factors drive it: load spikes, HRV suppression, sleep debt, missing rest days."
+        },
+        {
+          "name": "Scenario Simulator",
+          "desc": "Lose 4 kg? Sleep 8 hours? Add 10% volume? Every prediction recalculates instantly so you can plan with evidence."
+        },
+        {
+          "name": "Weekly Reports",
+          "desc": "Your week, understood: volume, load, recovery, strengths, weaknesses and what to do next — generated automatically."
+        },
+        {
+          "name": "Performance Score",
+          "desc": "One 0–100 number blending sleep, HRV, load balance, consistency and fitness trend. Know where you stand at a glance."
+        }
+      ]
+    },
+    "how": {
+      "title": "Live in three minutes",
+      "steps": [
+        {
+          "name": "Connect",
+          "desc": "Link Strava, Garmin, TrainingPeaks, Zwift, Apple Health, COROS, Polar or Suunto. We sync automatically every 15 minutes."
+        },
+        {
+          "name": "Analyze",
+          "desc": "Our models compute your training load, recovery state, injury risk and race predictions from every activity and every night of sleep."
+        },
+        {
+          "name": "Improve",
+          "desc": "Get daily guidance, weekly reports and answers to any question — grounded in your data, explained in plain language."
+        }
+      ]
+    },
+    "integrations": {
+      "title": "Plays well with your ecosystem"
+    },
+    "pricing": {
+      "title": "Simple pricing",
+      "subtitle": "Start free. Upgrade when you want the full picture.",
+      "month": "/month",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "$0",
+          "cta": "Start free",
+          "popular": false,
+          "features": [
+            "2 integrations",
+            "Dashboard & Performance Score",
+            "Weekly report",
+            "7-day history"
+          ]
+        },
+        {
+          "name": "Pro",
+          "price": "$12",
+          "cta": "Go Pro",
+          "popular": true,
+          "features": [
+            "Unlimited integrations",
+            "AI Coach unlimited",
+            "Race predictions & race-day plans",
+            "Injury risk with factors",
+            "Scenario simulator",
+            "Full history"
+          ]
+        },
+        {
+          "name": "Elite",
+          "price": "$29",
+          "cta": "Contact us",
+          "popular": false,
+          "features": [
+            "Everything in Pro",
+            "Coach seats & athlete sharing",
+            "API access",
+            "Priority support"
+          ]
+        }
+      ],
+      "popularLabel": "Popular"
+    },
+    "ctaFinal": {
+      "title": "Your next PR is in your data.",
+      "subtitle": "Join athletes who stopped guessing and started training with evidence.",
+      "cta": "Open dashboard"
+    },
+    "footer": {
+      "tagline": "AI-powered performance intelligence for endurance athletes.",
+      "product": "Product",
+      "company": "Company",
+      "links": {
+        "features": "Features",
+        "pricing": "Pricing",
+        "dashboard": "Dashboard",
+        "about": "About",
+        "contact": "Contact"
+      },
+      "rights": "All rights reserved."
+    }
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "coach": "AI Coach",
+    "predictions": "Predictions",
+    "injuryRisk": "Injury Risk",
+    "simulator": "Simulator",
+    "reports": "Weekly Report",
+    "integrations": "Integrations"
+  },
+  "dashboard": {
+    "title": "Good to see you",
+    "subtitle": "Here's how your body and training look today.",
+    "performanceScore": "Performance Score",
+    "trainingLoad": "Training Load",
+    "recovery": "Form (TSB)",
+    "sleep": "Sleep (7d avg)",
+    "hrv": "HRV",
+    "vsBaseline": "vs. baseline",
+    "vo2max": "VO₂ Max",
+    "ftp": "FTP",
+    "pace": "Threshold Pace",
+    "loadChartTitle": "Fitness · Fatigue · Form",
+    "loadChartSubtitle": "42-day fitness (CTL) vs. 7-day fatigue (ATL)",
+    "hrvChartTitle": "HRV & Resting HR",
+    "recentActivities": "Recent activities",
+    "insights": "AI Insights"
+  },
+  "coach": {
+    "title": "AI Coach",
+    "subtitle": "Ask anything about your own data.",
+    "placeholder": "e.g. Can I go hard tomorrow?",
+    "suggestions": [
+      "Can I go hard tomorrow?",
+      "Am I overtraining?",
+      "Why did my pace drop?",
+      "How do I raise my VO₂ max?"
+    ]
+  },
+  "predictions": {
+    "title": "Race Predictions",
+    "subtitle": "Model-estimated finish times based on your current fitness and form.",
+    "confidence": "confidence interval",
+    "pace": "pace",
+    "planTitle": "Race-day plan",
+    "nutrition": "Nutrition",
+    "pacing": "Pacing strategy",
+    "carbs": "carbs/h",
+    "fluid": "fluid/h"
+  },
+  "injury": {
+    "title": "Injury Risk",
+    "subtitle": "Why — not just a number.",
+    "injuryRisk": "Injury risk",
+    "overtraining": "Overtraining risk",
+    "decline": "Performance decline risk",
+    "factors": "Contributing factors"
+  },
+  "simulator": {
+    "title": "Scenario Simulator",
+    "subtitle": "Change one thing. See everything recalculate.",
+    "weight": "Weight change (kg)",
+    "sleepH": "Sleep (h/night)",
+    "volume": "Volume change (%)",
+    "run": "Run simulation",
+    "before": "Today",
+    "after": "Scenario"
+  },
+  "reports": {
+    "title": "Weekly Report",
+    "subtitle": "Your week, understood.",
+    "volume": "Volume",
+    "strengths": "Strengths",
+    "recommendations": "Recommendations"
+  },
+  "integrations": {
+    "title": "Integrations",
+    "subtitle": "Connect your ecosystem. We sync everything automatically every 15 minutes.",
+    "connected": "Connected",
+    "connect": "Connect",
+    "reauth": "Reconnect",
+    "lastSync": "Last sync"
+  }
+}

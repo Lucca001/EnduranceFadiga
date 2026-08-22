@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-foreground antialiased;
+  background-image: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(160 84% 45% / 0.08), transparent);
+}
+
+/* Glassmorphism card */
+.glass {
+  @apply rounded-2xl border border-border bg-card/60 shadow-card backdrop-blur-xl;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { @apply rounded-full bg-border; }
+::-webkit-scrollbar-track { background: transparent; }

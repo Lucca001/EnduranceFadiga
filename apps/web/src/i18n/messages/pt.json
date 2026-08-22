@@ -1,0 +1,232 @@
+{
+  "landing": {
+    "nav": {
+      "features": "Recursos",
+      "how": "Como funciona",
+      "pricing": "Preços",
+      "open": "Abrir dashboard"
+    },
+    "hero": {
+      "badge": "IA para atletas de endurance",
+      "title": "Treine com inteligência.",
+      "titleAccent": "Corra mais rápido.",
+      "subtitle": "Conecte Strava, Garmin e TrainingPeaks. A EnduranceAI analisa cada batimento, watt e noite de sono para prever sua performance, sinalizar risco de lesão e orientar você em linguagem simples.",
+      "cta": "Começar grátis",
+      "ctaSecondary": "Como funciona",
+      "stats": [
+        {
+          "value": "5k → Ironman",
+          "label": "predições de prova"
+        },
+        {
+          "value": "±2,5%",
+          "label": "precisão no tempo final"
+        },
+        {
+          "value": "8",
+          "label": "integrações"
+        },
+        {
+          "value": "24/7",
+          "label": "coaching com IA"
+        }
+      ]
+    },
+    "features": {
+      "title": "Tudo o que seus dados estão tentando te dizer",
+      "subtitle": "Uma plataforma. Todas as métricas. Respostas em linguagem simples, não planilhas.",
+      "items": [
+        {
+          "name": "AI Coach",
+          "desc": "Pergunte qualquer coisa sobre o seu treino. \"Posso treinar forte amanhã?\" recebe uma resposta que cita sua carga e VFC reais — não conselhos genéricos."
+        },
+        {
+          "name": "Predições de Prova",
+          "desc": "Tempos finais com intervalo de confiança de 5k a Ironman, com um modelo fisiológico corrigido pela sua forma atual."
+        },
+        {
+          "name": "Risco de Lesão",
+          "desc": "Veja sua porcentagem de risco e exatamente quais fatores a explicam: picos de carga, queda de VFC, dívida de sono, falta de descanso."
+        },
+        {
+          "name": "Simulador de Cenários",
+          "desc": "Perder 4 kg? Dormir 8 horas? Aumentar 10% o volume? Todas as predições recalculam na hora para você planejar com evidência."
+        },
+        {
+          "name": "Relatórios Semanais",
+          "desc": "Sua semana, compreendida: volume, carga, recuperação, pontos fortes, pontos fracos e o que fazer — gerado automaticamente."
+        },
+        {
+          "name": "Performance Score",
+          "desc": "Um número de 0 a 100 combinando sono, VFC, equilíbrio de carga, consistência e tendência de fitness."
+        }
+      ]
+    },
+    "how": {
+      "title": "No ar em três minutos",
+      "steps": [
+        {
+          "name": "Conecte",
+          "desc": "Vincule Strava, Garmin, TrainingPeaks, Zwift, Apple Health, COROS, Polar ou Suunto. Sincronizamos a cada 15 minutos."
+        },
+        {
+          "name": "Analise",
+          "desc": "Nossos modelos calculam carga de treino, recuperação, risco de lesão e predições de prova a partir de cada atividade e noite de sono."
+        },
+        {
+          "name": "Evolua",
+          "desc": "Receba orientação diária, relatórios semanais e respostas para qualquer pergunta — com base nos seus dados, em linguagem simples."
+        }
+      ]
+    },
+    "integrations": {
+      "title": "Integra com o seu ecossistema"
+    },
+    "pricing": {
+      "title": "Preço simples",
+      "subtitle": "Comece grátis. Faça upgrade quando quiser a visão completa.",
+      "month": "/mês",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "R$0",
+          "cta": "Começar grátis",
+          "popular": false,
+          "features": [
+            "2 integrações",
+            "Dashboard & Performance Score",
+            "Relatório semanal",
+            "Histórico de 7 dias"
+          ]
+        },
+        {
+          "name": "Pro",
+          "price": "R$39",
+          "cta": "Assinar Pro",
+          "popular": true,
+          "features": [
+            "Integrações ilimitadas",
+            "AI Coach ilimitado",
+            "Predições e planos de prova",
+            "Risco de lesão com fatores",
+            "Simulador de cenários",
+            "Histórico completo"
+          ]
+        },
+        {
+          "name": "Elite",
+          "price": "R$99",
+          "cta": "Fale conosco",
+          "popular": false,
+          "features": [
+            "Tudo do Pro",
+            "Assentos para treinador e atletas",
+            "Acesso à API",
+            "Suporte prioritário"
+          ]
+        }
+      ],
+      "popularLabel": "Mais popular"
+    },
+    "ctaFinal": {
+      "title": "Seu próximo recorde está nos seus dados.",
+      "subtitle": "Junte-se aos atletas que pararam de adivinhar e começaram a treinar com evidência.",
+      "cta": "Abrir dashboard"
+    },
+    "footer": {
+      "tagline": "Inteligência de performance com IA para atletas de endurance.",
+      "product": "Produto",
+      "company": "Empresa",
+      "links": {
+        "features": "Recursos",
+        "pricing": "Preços",
+        "dashboard": "Dashboard",
+        "about": "Sobre",
+        "contact": "Contato"
+      },
+      "rights": "Todos os direitos reservados."
+    }
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "coach": "AI Coach",
+    "predictions": "Predições",
+    "injuryRisk": "Risco de Lesão",
+    "simulator": "Simulador",
+    "reports": "Relatório Semanal",
+    "integrations": "Integrações"
+  },
+  "dashboard": {
+    "title": "Bom te ver",
+    "subtitle": "Assim estão seu corpo e seu treino hoje.",
+    "performanceScore": "Performance Score",
+    "trainingLoad": "Carga de Treino",
+    "recovery": "Forma (TSB)",
+    "sleep": "Sono (média 7d)",
+    "hrv": "VFC",
+    "vsBaseline": "vs. baseline",
+    "vo2max": "VO₂ Máx",
+    "ftp": "FTP",
+    "pace": "Pace de Limiar",
+    "loadChartTitle": "Fitness · Fadiga · Forma",
+    "loadChartSubtitle": "Fitness 42 dias (CTL) vs. fadiga 7 dias (ATL)",
+    "hrvChartTitle": "VFC & FC de Repouso",
+    "recentActivities": "Treinos recentes",
+    "insights": "AI Insights"
+  },
+  "coach": {
+    "title": "AI Coach",
+    "subtitle": "Pergunte qualquer coisa sobre os seus próprios dados.",
+    "placeholder": "ex.: Posso treinar forte amanhã?",
+    "suggestions": [
+      "Posso treinar forte amanhã?",
+      "Estou em overtraining?",
+      "Por que meu pace caiu?",
+      "Como aumentar meu VO₂ máx?"
+    ]
+  },
+  "predictions": {
+    "title": "Predições de Prova",
+    "subtitle": "Tempos estimados pelo modelo com base no seu fitness e forma atuais.",
+    "confidence": "intervalo de confiança",
+    "pace": "pace",
+    "planTitle": "Plano de prova",
+    "nutrition": "Nutrição",
+    "pacing": "Estratégia de ritmo",
+    "carbs": "carbo/h",
+    "fluid": "líquido/h"
+  },
+  "injury": {
+    "title": "Risco de Lesão",
+    "subtitle": "O porquê — não só um número.",
+    "injuryRisk": "Risco de lesão",
+    "overtraining": "Risco de overtraining",
+    "decline": "Risco de queda de performance",
+    "factors": "Fatores contribuintes"
+  },
+  "simulator": {
+    "title": "Simulador de Cenários",
+    "subtitle": "Mude uma coisa. Veja tudo ser recalculado.",
+    "weight": "Mudança de peso (kg)",
+    "sleepH": "Sono (h/noite)",
+    "volume": "Mudança de volume (%)",
+    "run": "Rodar simulação",
+    "before": "Hoje",
+    "after": "Cenário"
+  },
+  "reports": {
+    "title": "Relatório Semanal",
+    "subtitle": "Sua semana, compreendida.",
+    "volume": "Volume",
+    "strengths": "Pontos fortes",
+    "recommendations": "Recomendações"
+  },
+  "integrations": {
+    "title": "Integrações",
+    "subtitle": "Conecte seu ecossistema. Sincronizamos tudo automaticamente a cada 15 minutos.",
+    "connected": "Conectado",
+    "connect": "Conectar",
+    "reauth": "Reconectar",
+    "lastSync": "Última sincronização"
+  }
+}

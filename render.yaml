@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: enduranceai-api
+    runtime: docker
+    dockerfilePath: ./apps/api/Dockerfile
+    dockerContext: ./apps/api
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: { name: enduranceai-db, property: connectionString }
+      - key: REDIS_URL
+        fromService: { name: enduranceai-redis, type: redis, property: connectionString }
+      - key: CORS_ORIGINS
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+
+  - type: worker
+    name: enduranceai-worker
+    runtime: docker
+    dockerfilePath: ./apps/api/Dockerfile
+    dockerContext: ./apps/api
+    dockerCommand: arq app.workers.sync.WorkerSettings
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: { name: enduranceai-db, property: connectionString }
+      - key: REDIS_URL
+        fromService: { name: enduranceai-redis, type: redis, property: connectionString }
+
+  - type: redis
+    name: enduranceai-redis
+    ipAllowList: []
+    plan: free
+
+databases:
+  - name: enduranceai-db
+    plan: free

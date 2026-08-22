@@ -1,0 +1,196 @@
+// EnduranceAI — source of truth for the relational schema.
+// The FastAPI service mirrors these tables via SQLAlchemy (apps/api/app/db/models.py).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Sport {
+  RUN
+  RIDE
+  SWIM
+  STRENGTH
+  OTHER
+}
+
+enum Provider {
+  STRAVA
+  GARMIN
+  TRAININGPEAKS
+  ZWIFT
+  APPLE_HEALTH
+  COROS
+  POLAR
+  SUUNTO
+}
+
+enum SyncStatus {
+  CONNECTED
+  SYNCING
+  ERROR
+  DISCONNECTED
+  REAUTH_REQUIRED
+}
+
+model Athlete {
+  id           String        @id @default(cuid())
+  clerkId      String        @unique
+  email        String        @unique
+  name         String
+  locale       String        @default("en")
+  weightKg     Float?
+  heightCm     Float?
+  birthDate    DateTime?
+  ftpWatts     Int?
+  maxHr        Int?
+  restingHr    Int?
+  thresholdPaceSecPerKm Int?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  activities   Activity[]
+  dailyMetrics DailyMetric[]
+  integrations Integration[]
+  predictions  Prediction[]
+  insights     Insight[]
+  reports      WeeklyReport[]
+  chatSessions ChatSession[]
+}
+
+model Integration {
+  id            String     @id @default(cuid())
+  athleteId     String
+  provider      Provider
+  status        SyncStatus @default(CONNECTED)
+  accessToken   String?    /// encrypted at rest
+  refreshToken  String?    /// encrypted at rest
+  expiresAt     DateTime?
+  lastSyncAt    DateTime?
+  lastError     String?
+  scopes        String[]
+  createdAt     DateTime   @default(now())
+
+  athlete Athlete @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+
+  @@unique([athleteId, provider])
+  @@index([status])
+}
+
+model Activity {
+  id             String   @id @default(cuid())
+  athleteId      String
+  provider       Provider
+  externalId     String
+  sport          Sport
+  name           String
+  startedAt      DateTime
+  durationSec    Int
+  distanceM      Float?
+  elevationGainM Float?
+  avgHr          Int?
+  maxHr          Int?
+  avgPowerW      Int?
+  normPowerW     Int?
+  avgCadence     Float?
+  avgPaceSecPerKm Int?
+  calories       Int?
+  trainingLoad   Float?   /// TSS / TRIMP-style load
+  intensityFactor Float?
+  streams        Json?    /// downsampled time-series (hr, power, pace, alt)
+  createdAt      DateTime @default(now())
+
+  athlete Athlete @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, externalId])
+  @@index([athleteId, startedAt])
+}
+
+model DailyMetric {
+  id           String   @id @default(cuid())
+  athleteId    String
+  date         DateTime @db.Date
+  hrvRmssd     Float?
+  restingHr    Int?
+  sleepHours   Float?
+  sleepScore   Int?
+  vo2max       Float?
+  weightKg     Float?
+  ctl          Float?   /// chronic training load (fitness)
+  atl          Float?   /// acute training load (fatigue)
+  tsb          Float?   /// training stress balance (form)
+  readiness    Int?     /// 0–100
+  performanceScore Int? /// 0–100 composite
+
+  athlete Athlete @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+
+  @@unique([athleteId, date])
+}
+
+model Prediction {
+  id          String   @id @default(cuid())
+  athleteId   String
+  kind        String   /// race_time | ftp | vo2max | injury_risk | scenario
+  target      String?  /// e.g. "10k", "70.3"
+  payload     Json     /// model output: value, ci, factors, explanation
+  modelVersion String
+  createdAt   DateTime @default(now())
+
+  athlete Athlete @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+
+  @@index([athleteId, kind, createdAt])
+}
+
+model Insight {
+  id        String   @id @default(cuid())
+  athleteId String
+  severity  String   /// info | warning | critical | positive
+  title     String
+  body      String   /// natural-language explanation
+  factors   Json?
+  readAt    DateTime?
+  createdAt DateTime @default(now())
+
+  athlete Athlete @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+
+  @@index([athleteId, createdAt])
+}
+
+model WeeklyReport {
+  id         String   @id @default(cuid())
+  athleteId  String
+  weekStart  DateTime @db.Date
+  summary    Json     /// volume, load, recovery, strengths, weaknesses, recommendations
+  createdAt  DateTime @default(now())
+
+  athlete Athlete @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+
+  @@unique([athleteId, weekStart])
+}
+
+model ChatSession {
+  id        String        @id @default(cuid())
+  athleteId String
+  title     String        @default("New conversation")
+  createdAt DateTime      @default(now())
+  messages  ChatMessage[]
+
+  athlete Athlete @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+}
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  sessionId String
+  role      String   /// user | assistant
+  content   String
+  context   Json?    /// data snapshot used to ground the answer
+  createdAt DateTime @default(now())
+
+  session ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId, createdAt])
+}

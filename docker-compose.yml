@@ -1,0 +1,48 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: endurance
+      POSTGRES_PASSWORD: endurance
+      POSTGRES_DB: enduranceai
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U endurance"]
+      interval: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 5
+
+  api:
+    build: { context: ./apps/api }
+    env_file: .env
+    ports: ["8000:8000"]
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes: [./apps/api:/code]
+
+  worker:
+    build: { context: ./apps/api }
+    env_file: .env
+    depends_on:
+      redis: { condition: service_healthy }
+    command: arq app.workers.sync.WorkerSettings
+    volumes: [./apps/api:/code]
+
+  web:
+    build: { context: ./apps/web }
+    env_file: .env
+    ports: ["3000:3000"]
+    depends_on: [api]
+
+volumes:
+  pgdata:
