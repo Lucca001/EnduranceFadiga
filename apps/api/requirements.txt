@@ -12,7 +12,7 @@ numpy==1.26.*
 scikit-learn==1.5.*
 xgboost==2.*
 lightgbm==4.*
-prophet==1.1.*
+prophet==1.4.*
 joblib==1.*
 python-jose[cryptography]==3.*
 anthropic==0.*
