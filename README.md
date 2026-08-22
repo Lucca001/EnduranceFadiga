@@ -142,7 +142,10 @@ make lint   # ruff + eslint
 
 CI runs both on every push and pull request.
 
-## Deployment
+## Publishing & deployment
+
+Publishing this repository to GitHub: [`docs/PUBLICAR-NO-GITHUB.md`](docs/PUBLICAR-NO-GITHUB.md)
+(includes authentication troubleshooting — GitHub no longer accepts account passwords over Git).
 
 See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for Vercel (frontend), Railway/Render
 (API + worker), managed Postgres and Redis, and environment variables.
